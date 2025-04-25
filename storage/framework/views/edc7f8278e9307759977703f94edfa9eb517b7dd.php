@@ -1,0 +1,125 @@
+<?php $__env->startSection('title', 'UPI'); ?>
+<?php $__env->startSection('pagetitle', 'UPI'); ?>
+<?php
+$table = 'yes';
+$export = 'wallet';
+
+$status['type'] = 'Report';
+$status['data'] = [
+    'success' => 'Success',
+    'pending' => 'Pending',
+    'failed' => 'Failed',
+    'reversed' => 'Reversed',
+    'refunded' => 'Refunded',
+    'dispute' => 'Dispute',
+];
+?>
+<?php $__env->startSection('content'); ?>
+        
+
+
+        <div class="d-flex align-items-center mb-3">
+                       <a href="<?php echo e(route('home')); ?>"> <span class="me-1 mb-1 h3 card-title d-inline-block">Home</span></a>
+                        <span class="h3 text-muted card-title">/</span>
+                        <span class="h3 ms-2 card-title">UPI Report</span>
+                      </div>
+        <?php echo $__env->make('layouts.filter', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <!--end breadcrumb-->
+
+        <div class="card">
+            <div class="card-header d-flex justify-content-between pb-0">
+                <h4 class="mb-0 text-muted text-uppercase" >UPI Statement</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="dataTables" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Transaction Details</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    
+<?php $__env->stopSection(); ?>
+<?php $__env->startPush('style'); ?>
+<!-- DataTables Bootstrap 5 Styling -->
+<link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css" rel="stylesheet">
+<?php $__env->stopPush(); ?>
+
+<?php $__env->startPush('script'); ?>
+<!-- DataTables and Bootstrap 5 JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#dataTables').DataTable({
+            processing: true,
+            searching: false,
+            serverSide: true,
+            pageLength: 10, // Set default page length to 10
+            orderable: false, // Disable sorting for all columns
+            order: [], // Disable initial sorting
+            orderClasses: false,
+            ajax: {
+                url: '<?php echo e(url('getUpiOrdersSuccess')); ?>',
+                data: function(d) {
+                    d.datefrom = $('input[name="from_date"]').val();
+                    d.dateto = $('input[name="to_date"]').val();
+                    d.searchtext = $('input[name="searchtext"]').val();
+                    d.statustext = $('select[name="status"]').val();
+                    d.agentid = $('input[name="agent"]').val();
+                }
+            },
+            columns: [{
+                    data: 'id',
+                    render: (data, type, full) =>
+                        `<b>${full.id}</b><br><small>${full.created_at}</small>`
+                },
+
+                {
+                    data: 'aadhar',
+                    render: (data, type, full) =>
+                        `TXN ID: ${full.txnid}<br>Client TXN ID: ${full.mytxnid}<br>REF NO: ${full.refno}`
+                },
+                {
+                    data: 'amount',
+                    render: (data, type, full) =>
+                        `Amount: ₹${full.amount}<br>Charge: ₹${full.charge}`
+                },
+                {
+                    data: 'status',
+                    render: (data, type, full) => {
+                        const statusClasses = {
+                            success: ' badge bg-success text-uppercase',
+                            pending: 'badge bg-warning text-uppercase',
+                            failed: 'badge bg-danger text-uppercase',
+                            reversed: 'badge bg-info text-uppercase'    
+                        };
+                        const badgeClass = statusClasses[full.status] || 'text-bg-secondary';
+                        return `<span class="badge ${badgeClass}">${full.status}</span>`;
+                    }
+                }
+            ]
+        });
+    });
+</script>
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\template1\resources\views/statement/upi.blade.php ENDPATH**/ ?>

@@ -1,0 +1,174 @@
+@media (max-width: 1366px) {}
+
+@media (max-width: 1200px) {
+    .social {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cardBalance {
+        background-size: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    .cardBalance {
+        background-size: 50%;
+    }
+    .g2cService .logos img {
+        width: 65px;
+    }
+    .g2cService .logos li {
+        margin: 10px 20px 0
+    }
+    .footer nav {
+        width: 100%;
+    }
+    .footer nav ul {
+        width: 100%;
+        text-align: center;
+    }
+    .footer nav ul li {
+        display: inline-block;
+        float: none !important;
+    }
+    .social {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .footer .copyright {
+        width: 100%;
+    }
+    .margin_btm50 {
+        margin-bottom: 50px;
+    }
+    .fontcont {
+        font-size: 16px;
+    }
+    .top_contact ul li:nth-child(2) {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    /*.panelFull { margin:0 -20px;}*/
+    h5 a.pull-right {
+        float: right !important;
+    }
+    .divTable {
+        border: 0px;
+    }
+    .divTable {
+        border: 1px solid #e0e0e0;
+    }
+    .divTableCell {
+        padding: 4px 8px;
+    }
+    .divTableRow {
+        /*display:table-row;*/
+        display: table;
+        position: relative;
+        border-bottom: 1px solid #e0e0e0;
+        width: 100%;
+    }
+    .divTable .divTableBody .divTableRow div[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: inherit;
+        font-weight: bold;
+        padding-right: 5px;
+    }
+    .as {
+        position: absolute;
+        float: none;
+        left: 40%;
+        top: 0;
+        margin-top: 0;
+    }
+    .admin-header-menu ul li {
+        margin-right: 5px;
+    }
+    .cardBalance {
+        background-size: 60%;
+    }
+    .cardBalance .pull-right {
+        float: right !important;
+    }
+    .g2cService .logos img {
+        width: 55px;
+    }
+    .g2cService .logos li {
+        margin: 10px 20px 0
+    }
+    /*6-9-2017*/
+    .eplogo {
+        margin-left: 0px;
+        margin-top: 10px;
+        display: block;
+    }
+    .powred {
+        padding-left: 0px;
+    }
+    .landing-page .parallax .parallax-image {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .group .pull-right {
+        float: right !important;
+    }
+    .landing-page .parallax {
+        height: inherit;
+    }
+    .landing-page .parallax .container {
+        position: relative;
+    }
+    .admin-header-menu ul {
+        margin: 16px 0 0
+    }
+    .admin-menu .navbar-nav>li.open>.dropdown-menu,
+    .admin-menu .open .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .navbar-nav .open .dropdown-menu>li>a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .header-text {
+        text-align: center;
+    }
+    .footer nav ul li {
+        display: inherit;
+    }
+    .landing-page .parallax {
+        padding-top: 0px;
+    }
+    .container {
+        margin: 0px;
+    }
+    .collapse_icon {
+        width: 30%;
+        margin: 0 auto;
+    }
+    .parallax-text {
+        padding: 20px;
+    }
+    .navbar-header {
+        width: 100%;
+    }
+    .top_contact ul li {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .cardBalance {
+        background-size: 50%;
+    }
+}

@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: black;
+}
+
+.navbar a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(199, 199, 199);
+}
+
+footer {
+    background:black;
+    color: white;
+    padding: 1px 10px;
+}
+
+.register-btn {
+    background-image: linear-gradient(to right, green, rgb(40, 228, 40));
+    color: white;
+    padding: 5px 20px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    text-align: center;
+    max-width: 5px auto;
+}
+
+.box {
+    border-radius: 5px;
+    padding: 0px 20px;
+    padding-bottom: 10px;
+    border: 3px solid black;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: black;
+    font-size: 12px;
+}
+
+input,
+textarea {
+    border-radius: 6px;
+    width: 100%;
+    background: rgb(245, 245, 245);
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid grey;
+    margin: 10px auto;
+}
+
+.boxed {
+    background: black;
+    color: white;
+    padding: 4px 10px;
+}
+
+.main_row {
+    padding-left: 5%;
+}
